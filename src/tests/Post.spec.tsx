@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 import React from 'react';
 
-import Post, { getServerSideProps } from './[slug]';
-import { getPrismicClient } from '../../services/prismic';
+import Post, { getServerSideProps } from '../pages/posts/[slug]';
+import { getPrismicClient } from '../services/prismic';
 import { getSession } from 'next-auth/react';
 
 
@@ -14,8 +14,9 @@ const post = {
     updatedAt: '10 de Abril'
 }
 
+
 jest.mock('next-auth/react');
-jest.mock('../../services/prismic')
+jest.mock('../services/prismic')
 
 describe('Post page', () => {
     it('renders correctlyy', () => {

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 import React from 'react';
 import { useSession } from 'next-auth/react';
-import Post from '../preview/[slug]';
+import Post from '../pages/posts/preview/[slug]';
 
 import { useRouter } from 'next/router';
 
@@ -16,7 +16,7 @@ const post = {
 
 jest.mock('next-auth/react');
 jest.mock('next/router');
-jest.mock('../../../services/prismic')
+jest.mock('../services/prismic')
 
 describe('Post preview page', () => {
     it('renders correctlyy', () => {

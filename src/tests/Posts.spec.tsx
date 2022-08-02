@@ -2,15 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 import React from 'react';
 
-import Posts, {getStaticProps} from './index';
-import { getPrismicClient } from '../../services/prismic';
+import Posts, {getStaticProps} from '../pages/posts/index';
+import { getPrismicClient } from '../services/prismic';
 
 
 const posts = [
     {slug:'my-new-post', title: 'My New Post', execerpt: 'Post execerpt', updatedAt: '10 de Abril'}
 ]
 
-jest.mock('../../services/prismic')
+jest.mock('../services/prismic')
 
 describe('Posts page', () => {
     it('renders correctlyy', () => {
