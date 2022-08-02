@@ -8,7 +8,7 @@ import styles from './home.module.scss';
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number | string;
+    amount: number | bigint;
   }
 }
 export default function Home({ product }: HomeProps) {
