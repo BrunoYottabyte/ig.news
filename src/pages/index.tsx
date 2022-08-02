@@ -12,8 +12,6 @@ interface HomeProps {
   }
 }
 export default function Home({ product }: HomeProps) {
-console.log(priceFormat('10'))
-
   return (
     <>
       <Head>
