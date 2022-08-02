@@ -8,11 +8,12 @@ import styles from './home.module.scss';
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: number | string;
   }
 }
-
 export default function Home({ product }: HomeProps) {
+console.log(priceFormat('10'))
+
   return (
     <>
       <Head>
@@ -32,7 +33,7 @@ export default function Home({ product }: HomeProps) {
             <span>for {priceFormat(product.amount)} month</span>
           </p>
 
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
 
         <img src="/images/avatar.svg" alt="Girl coding" />
@@ -47,6 +48,8 @@ export default function Home({ product }: HomeProps) {
   const price = await stripe.prices.retrieve("price_1L5KjGEEIgWhIESkfrt5sluz", {
     expand: ['product']
   })
+
+
 
   const product = {
     priceId: price.id,
